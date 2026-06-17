@@ -1,0 +1,14 @@
+services:
+  back:
+    build: ./back
+    container_name: vacation_back
+    ports:
+      - "8000:8000"
+
+  front:
+    build: ./front
+    container_name: vacation_front
+    ports:
+      - "8501:8501"
+    depends_on:
+      - back
